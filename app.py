@@ -17,17 +17,17 @@ def main():
     if flask.request.method == "POST":
         rooms = flask.request.form['rooms']
         area = flask.request.form['area']
+        area = float(area)
+        area_fix = np.log(area)
         bairro = flask.request.form['bairro']
-        home_object = np.array([area,rooms,bairro])
         df = pd.read_csv('./static/db.csv',sep=';',encoding='latin')
         dimensions = df['Hood'].unique()
-        bairro = 'badu'
         objs = enumerate(dimensions, start=2)
         size = dimensions.shape[0]
         size += 2
         predict_obj = np.zeros((1,size))
-        predict_obj[0] = 1
-        predict_obj[0,1] = 1
+        predict_obj[0,0] = area_fix
+        predict_obj[0,1] = rooms
         for count, obj in objs:
             if bairro == obj:
                 coord = count
