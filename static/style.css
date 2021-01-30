@@ -1,0 +1,8 @@
+@font-face{
+    font-family: Yusei;
+    src: url('./YuseiMagic-Regular.ttf') format('truetype');
+}
+
+p {
+    font-family: 'Yusei';
+}

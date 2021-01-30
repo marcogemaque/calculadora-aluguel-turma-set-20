@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/style.css">
+        <title>
+            Homie
+        </title>
+    </head>
+    <body>
+        <p> Home is where the heart is. </p>
+        <label>
+            <form action="{{ url_for('main') }}" method="POST">
+                <input type="number" id="rooms" name="rooms" placeholder="1,2,3,etc">
+                <input type="number" id="area" name="area" placeholder="10,20,30m²">
+                <input type="text" id="bairro" name="bairro" placeholder="icarai, saofrancisco, badu">
+                <input type="submit" id="submit_button" value="submit">
+            </form>
+        </label>
+    </body>
+</html>
